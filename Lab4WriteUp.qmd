@@ -357,7 +357,7 @@ Use the `html_attr(...)` function to pull the source link ("src"). Then, use `pa
 #| size: "scriptsize"
 (src <- html_attr(image.element, "src"))
 
-(src.link = paste("website/",src, sep = ""))
+(image.url = paste("website/",src, sep = ""))
 ```
 
 ## Part i
@@ -366,7 +366,8 @@ Now that we have all the things we need, let's try to print the recipe. Below, I
 **Image**
 
 ```{r}
-#| eval: false
+#| echo: false
+#| results: asis
 # width="50%" shrinks the image for printing
 recipe.title <- recipe.item |> html_element("h1") |> html_text()
 cat(paste('![', recipe.title, '](', image.url, "){width=50%}", sep="")) 
@@ -375,7 +376,8 @@ cat(paste('![', recipe.title, '](', image.url, "){width=50%}", sep=""))
 **Ingredients**
 
 ```{r}
-#| eval: false
+#| echo: false
+#| results: asis
 formatted_list <- paste("-", html_text(ingredients))
 cat(formatted_list, sep = "\n")
 ```
@@ -383,7 +385,8 @@ cat(formatted_list, sep = "\n")
 **Instructions**
 
 ```{r}
-#| eval: false
+#| echo: false
+#| results: asis
 formatted_list <- paste("1.", html_text(instructions))
 cat(formatted_list, sep = "\n")
 ```
