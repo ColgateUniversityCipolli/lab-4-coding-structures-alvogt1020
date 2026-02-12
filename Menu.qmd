@@ -82,7 +82,45 @@ dinner <- c("website/AfricanPeanutSoup.html",
             "website/RedWineRagu.html",
             "website/SalmonChowder.html",
             "website/Shakshuka.html")
+
+# SOLUTION
+library("rvest")
+
+# randomly select our meals and store them all in one vector:
+selected.dinners = sample(dinner, 3)
+selected.breakfast = sample(breakfasts, 1)
+
+all.meals = c(selected_dinners, selected_breakfast)
+
+for(file in all.meals){
+  recipe.item = read_html(file) # read the recipe in
+  
+  # get title
+  title.text = html_element(recipe.item, "title") # find the title (element type
+                                                  #was found by opening developer tools for random recipe)
+  html_text = (title.text) # retrieves the title
+  
+  # get image
+  image.element = html_element(recipe.item,".img-fluid")
+  (src <- html_attr(image.element, "src"))
+  (image.url = paste("website/",src, sep = ""))
+
+  # get ingredients
+  ingredients.section = html_element(recipe.item,"#ingredients")
+  ingredients = html_elements(ingredients.section,"li")
+
+  # get instructions
+  instructions.section = html_element(recipe.item,"#instructions")
+  instructions = html_elements(instructions.section,"li")
+  
+
+}
+
+
+
 ```
+
+
 
 # Ingredients
 
