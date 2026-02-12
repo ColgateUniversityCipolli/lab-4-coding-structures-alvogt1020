@@ -191,6 +191,16 @@ Write a function called `calculate.score(...)` that takes three arguments repres
 $$Score = (x_1 \times 2) + x_2 - x_3$$
 Use your function to create a new column `total.score` in our data frame `df`.
 
+**SOLUTION**
+```{r}
+#| size: "scriptsize"
+calculate.score = function(x1,x2,x3){
+  score = (x1 * 2) + x2 - x3
+}
+df$total.score = calculate.score(df$x1,df$x2,df$x3)
+df
+```
+
 ## Part j
 Create a function called `evaluate.row(...)` that takes one argument and returns "low" when the argument is less than 4, "mid" when the argument is between 4 and 7 (inclusive), and "high" when the arguement is 8 or larger. Then, use `sapply(...)` to apply it to column `x1`.
 
