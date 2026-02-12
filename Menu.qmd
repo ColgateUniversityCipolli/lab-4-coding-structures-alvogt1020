@@ -86,9 +86,14 @@ dinner <- c("website/AfricanPeanutSoup.html",
             "website/Shakshuka.html")
 
 # SOLUTION
+#(apologies for the sloppy code, as you mentioned, sometimes we shoot ourselves in the foot and don't realize until we've already bled out)
+
+
 library("rvest")
 
-counter = 1
+counter = 1 # used to make recipe numbers dynamic in headers
+grocery.list = c() #initialize a grocery list vector containing the ingredients
+
 
 # randomly select our meals and store them all in one vector:
 selected.dinners = sample(dinner, 3)
@@ -96,6 +101,29 @@ selected.breakfast = sample(breakfasts, 1)
 
 all.meals = c(selected.dinners, selected.breakfast)
 
+# Make grocery list before doing anythibg else
+for(file in all.meals){
+
+  recipe.item = read_html(file)
+  ingredients.section = html_element(recipe.item,"#ingredients")
+  ingredients = html_elements(ingredients.section,"li")
+
+  # add ingredients to grocery list
+  grocery.list = c(grocery.list, html_text(ingredients))
+
+  counter = counter + 1
+}
+
+# Print groceyr list
+cat("# Grocery List")
+cat("\n\n")
+
+formatted_list = paste("-", grocery.list) 
+cat(formatted_list, sep = "\n") 
+
+cat("\n\n\\newpage\n\n")
+
+counter = 1 # reinitialize counter 
 for(file in all.meals){
   if(counter==4){
     cat("## Breakfast Recipe")
