@@ -80,6 +80,12 @@ x <- sample(x=1:10,          # sample from 1, 2, 3, ..., 10
             replace = TRUE)  # allowed to sample the same item multiple times
 ```
 
+**Solution**
+To obtain the third item of the vector, x, we use brackets and the index number 3.
+```{r}
+(third.item = x[3])
+```
+
 ## Part b
 
 Below, I create a data frame filled with random observations.
