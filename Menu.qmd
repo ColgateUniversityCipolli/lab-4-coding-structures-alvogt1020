@@ -49,7 +49,9 @@ library(tidyverse)
 
 <!-- Code For Building Menu Here -->
 ```{r}
-#| include: false
+#| echo: false
+#| results: asis
+
 breakfasts <- c("website/BerryMelonSmoothie.html",
                 "website/BiscuitsAndGravy.html",
                 "website/BreakfastCheesecake.html",
@@ -86,6 +88,8 @@ dinner <- c("website/AfricanPeanutSoup.html",
 # SOLUTION
 library("rvest")
 
+counter = 1
+
 # randomly select our meals and store them all in one vector:
 selected.dinners = sample(dinner, 3)
 selected.breakfast = sample(breakfasts, 1)
@@ -93,16 +97,21 @@ selected.breakfast = sample(breakfasts, 1)
 all.meals = c(selected.dinners, selected.breakfast)
 
 for(file in all.meals){
+  if(counter==4){
+    cat("## Breakfast Recipe")
+  }else{
+    cat(paste("## Dinner Recipe", counter))}
+
+
+  cat("\n")
+  cat("\n")
+  cat("\n")
+
   recipe.item = read_html(file) # read the recipe in
-  
-  # get title
-  title.text = html_element(recipe.item, "title") # find the title (element type
-                                                  #was found by opening developer tools for random recipe)
-  title.text = html_text(title.text) # retrieves the title as characters and overwrites the object with said string
   
   # get image
   image.element = html_element(recipe.item,".img-fluid")
-  (src <- html_attr(image.element, "src"))
+  (src = html_attr(image.element, "src"))
   (image.url = paste("website/",src, sep = ""))
 
   # get ingredients
@@ -117,36 +126,38 @@ for(file in all.meals){
   recipe.title <- recipe.item |> html_element("h1") |> html_text()
   cat(paste('![', recipe.title, '](', image.url, "){width=50%}", sep="")) 
 
+  cat("\n")
+  cat("\n")
+  cat("\n")
+
   # Ingredients
   formatted_list <- paste("-", html_text(ingredients))
   cat(formatted_list, sep = "\n")
 
+  cat("\n")
+  cat("\n")
+  cat("\n")
+
   # Instructions
   formatted_list <- paste("1.", html_text(instructions))
   cat(formatted_list, sep = "\n")
+  
+  cat("\n")
+  cat("\n")
+  cat("\n")
+
+  cat("\\newpage")
+
+  cat("\n")
+  cat("\n")
+  cat("\n")
+
+  counter = counter+1
+
+
 
 }
 
 
 
 ```
-
-
-
-# Ingredients
-
-\newpage
-
-# Recipe One
-
-\newpage
-
-# Recipe Two
-
-\newpage
-
-# Recipe Three
-
-\newpage
-
-# Breakfast Recipe

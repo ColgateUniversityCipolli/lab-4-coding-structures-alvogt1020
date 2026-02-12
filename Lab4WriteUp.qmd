@@ -355,7 +355,7 @@ Use the `html_attr(...)` function to pull the source link ("src"). Then, use `pa
 
 ```{r}
 #| size: "scriptsize"
-(src <- html_attr(image.element, "src"))
+(src = html_attr(image.element, "src"))
 
 (image.url = paste("website/",src, sep = ""))
 ```
