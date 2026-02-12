@@ -258,6 +258,7 @@ if(df$x1[i]<4){
 We could also avoid the block structure and loop structure entirely for part *(j)*, and use the vectorized form of `if` (though it's definitely a bit more cluttered):
 
 ```{r}
+#| size: "scriptsize"
 df$category = ifelse(df$x1<4,"low",
                       ifelse(df$x1<=7,"mid",
                       "high"))
@@ -272,6 +273,7 @@ Install and load the `rvest` package [@rvest].
 **SOLUTION**
 NOTE: Downloaded library installed in the console using `install.packages("...")`.
 ```{r}
+#| size: "scriptsize"
 library("rvest")
 ```
 
@@ -282,6 +284,7 @@ Load the html of the `website/KimchiGrilledCheese.html` using the `read_html()` 
 
 **SOLUTION**
 ```{r}
+#| size: "scriptsize"
 recipe.item = read_html("website/KimchiGrilledCheese.html")
 ```
 
@@ -296,6 +299,7 @@ Find the name of the Ingredients section of the website and pull the HTML of the
 The name of the ID is `ingredients`. 
 
 ```{r}
+#| size: "scriptsize"
 (ingredients.section = html_element(recipe.item,"#ingredients"))
 ```
 
@@ -307,12 +311,20 @@ Now, we want to obtain all of the itemized items. Find the element type the indi
 **SOLUTION**
 We can see from part *(c)* that the ingredients are type `<li>`.
 ```{r}
+#| size: "scriptsize"
 (ingredients = html_elements(ingredients.section,"li"))
 ```
 
 
 ## Part e
 Similar to Part c. Find the name of the Instructions section of the website and pull the HTML of the function using `html_element(...)` and save the results to an object called `instructions.section`.<br/>
+
+**SOLUTION**
+The name of the instructions section is `instructions`.
+```{r}
+#| size: "scriptsize"
+instructions.section = html_element(recipe.item,"#instructions")
+```
 
 ## Part f
 Now, we want to obtain all of the enumerated items. Find the element type the individual instructions and pull all of them from `instructions.section` using `html_elements(...)` (note the added s) and save the results to an object called `instructions`.
