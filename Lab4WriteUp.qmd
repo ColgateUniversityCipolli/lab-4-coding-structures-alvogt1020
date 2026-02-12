@@ -248,7 +248,7 @@ for(i in 1:nrow(df)){
 if(df$x1[i]<4){
     df$category[i] = "low"
   }else if(df$x1[i]<=7){
-    df$category[i] = "high"
+    df$category[i] = "mid"
   }else{
     df$category[i] = "high"
   }
@@ -279,6 +279,11 @@ library("rvest")
 
 Load the html of the `website/KimchiGrilledCheese.html` using the `read_html()` function and save the result to an object called `recipe.item`. We will use the Kimchi Grilled Cheese recipe as our prototype and extend this workflow to all recipes, so try to be as general as possible. If you do look at it, you'll notice it contains the html we saw in the developer tools in class.<br/>
 **Hint**: You can use `read_html(...)` like `read.csv(...)`. Don't forget you can use the documentation to help use it.
+
+**SOLUTION**
+```{r}
+recipe.item = read_html("website/KimchiGrilledCheese.html")
+```
 
 ## Part c
 
