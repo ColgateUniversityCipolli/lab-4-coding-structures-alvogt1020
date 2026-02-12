@@ -120,8 +120,16 @@ The `head(...)` function allows us to view the top 6 rows (by default) of our da
 ## Part c
 Ask for the column `x1`.
 
+**Solution**
+We can view the column `x1` by using the `$` operator.
+```{r}
+#| size: "scriptsize"
+(col.x1 = df$x1)
+```
+
 ## Part d
 Ask for the fifth row of the data frame.
+
 
 ## Part e
 Ask for the the value of `x1` in the fifth row of the data frame.
