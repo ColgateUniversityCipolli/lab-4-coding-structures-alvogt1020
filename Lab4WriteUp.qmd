@@ -130,6 +130,12 @@ We can view the column `x1` by using the `$` operator.
 ## Part d
 Ask for the fifth row of the data frame.
 
+**Solution**
+We can view the fifth row of the df by using brackets. The syntax for pulling data with brackets is [rows, cols], where leaving an entry blank tells `R` to pull *all* rows, or *all* columns (depending on which is left blank). Because we want to view all columns of row 5, we leave the columns slot blank.
+```{r}
+#| size: "scriptsize"
+(row.5 = df[5, ])
+```
 
 ## Part e
 Ask for the the value of `x1` in the fifth row of the data frame.
