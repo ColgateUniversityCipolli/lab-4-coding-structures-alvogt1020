@@ -140,6 +140,14 @@ We can view the fifth row of the df by using brackets. The syntax for pulling da
 ## Part e
 Ask for the the value of `x1` in the fifth row of the data frame.
 
+**Solution**
+To obtain the value of `x1` in the fifth row of the data frame, we again use brackets. However, this time, we specify that we want the first column, as *part d* has shown as that `x1` is the first column of our df.
+```{r}
+#| size: "scriptsize"
+(part.e = df[5,1])
+```
+
+
 ## Part f
 Ask for the the value of in the third column and the fifth row of the data frame.
 
