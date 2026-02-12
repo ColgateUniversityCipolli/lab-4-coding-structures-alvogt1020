@@ -211,11 +211,11 @@ Create a function called `evaluate.row(...)` that takes one argument and returns
 #| size: "scriptsize"
 evaluate.row = function(x){
   if(x<4){
-    print("low")
+    "low"
   }else if(x<=7){
-    print("mid")
+    "mid"
   }else{
-    print("high")
+    "high"
   }
 }
 
