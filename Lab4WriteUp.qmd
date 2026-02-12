@@ -412,10 +412,18 @@ Read [https://www.scrapingbee.com/blog/is-web-scraping-legal/](Is Web Sraping Le
 ## Conditionals
 Did you use conditional statements in your code? If yes, how. If not, are there places you could have used them but did something else?
 
+**RESPONSE**
+Yes, I used a conditional statement to check if the recipe was the last recipe which, if it was, would label it as the breakfast recipe. This worked because of how I created the object `all.meals`, with breakfast concatenated to the last entry.
+
 ## Loops
 Did you use loops in your code? If yes, how. If not, are there places you could have used them but did something else?
+
+Yes, I used two for loops. The first of which I used to build the grocery list, the second I used to print each recipe's image, ingredients, and instructions.
+
+**RESPONSE**
 
 ## Functions
 Did you use functions in your code? If yes, how. If not, are there places you could have used them but did something else?
 
-
+**RESPONSE**
+I did not create any functions of my own. In hindsight, it would've been efficient to create a function that could take html as the input and print the associated image, ingredient, and instructions combo.
