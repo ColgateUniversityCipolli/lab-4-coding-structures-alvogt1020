@@ -269,6 +269,12 @@ df$category = ifelse(df$x1<4,"low",
 
 Install and load the `rvest` package [@rvest].
 
+**SOLUTION**
+NOTE: Downloaded library installed in the console using `install.packages("...")`.
+```{r}
+library("rvest")
+```
+
 ## Part b
 
 Load the html of the `website/KimchiGrilledCheese.html` using the `read_html()` function and save the result to an object called `recipe.item`. We will use the Kimchi Grilled Cheese recipe as our prototype and extend this workflow to all recipes, so try to be as general as possible. If you do look at it, you'll notice it contains the html we saw in the developer tools in class.<br/>
