@@ -163,6 +163,13 @@ To obtain the value in third column and the fifth row of the data frame, we foll
 ## Part g
 Create a sequence from 1 to 10 by 2 and use it to print the odd rows of the data frame.
 
+**Solution**
+To create such a sequence, we use the `seq` function. The syntax of the function in this instance is intuitive, using `from`, `to`, and `by` as arguments.
+```{r}
+#| size: "scriptsize"
+(part.g = seq(from = 1, to = 10, by = 2)) 
+```
+
 ## Part h
 Below, I create an empty column called `x12`. Fill in the details of the `for(...)` loop to ensure `x12` is the product of `x1` and `x2`.
 ```{r}
