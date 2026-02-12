@@ -164,10 +164,11 @@ To obtain the value in third column and the fifth row of the data frame, we foll
 Create a sequence from 1 to 10 by 2 and use it to print the odd rows of the data frame.
 
 **Solution**
-To create such a sequence, we use the `seq` function. The syntax of the function in this instance is intuitive, using `from`, `to`, and `by` as arguments.
+To create such a sequence, we use the `seq` function. The syntax of the function in this instance is intuitive, using `from`, `to`, and `by` as arguments. We can then use this list of odd numbers to pull the odd row numbers of our df by using brackets with the generated vector as our row indices.
 ```{r}
 #| size: "scriptsize"
-(part.g = seq(from = 1, to = 10, by = 2)) 
+(odd.indices = seq(from = 1, to = 10, by = 2)) 
+(odd.rows = df[odd.indices,])
 ```
 
 ## Part h
