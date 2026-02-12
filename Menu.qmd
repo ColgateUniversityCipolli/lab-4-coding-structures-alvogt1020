@@ -125,7 +125,7 @@ cat("\n\n\\newpage\n\n")
 
 counter = 1 # reinitialize counter 
 for(file in all.meals){
-  if(counter==4){
+  if(counter==length(all.meals)){
     cat("## Breakfast Recipe")
   }else{
     cat(paste("## Dinner Recipe", counter))}

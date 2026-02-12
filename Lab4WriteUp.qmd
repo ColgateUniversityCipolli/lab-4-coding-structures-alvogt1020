@@ -404,6 +404,8 @@ When you render this document, no code should be visible. Instead, you should se
 
 # Describe your work!
 
+The website construction went well in the end; however, I ended up creating it with clunky code. I used several loops and repeated the scraping process twice (once for the grocery list, once for the recipes themselves). I also used a lot of manual spacing to accomodate my loop which potentially makes the code less dynamic. Overall, there are some redundancies in my code, but for someone with minimal coding experience/someone for whom coding does not come easily, I am somewhat pleased with the output.
+
 ## Why a fake website?
 Read [https://www.scrapingbee.com/blog/is-web-scraping-legal/](Is Web Sraping Legal?). Originally, I conceived doing this with recipes from Purple Carrot (my favorite subscription service). Being a large company, their terms of service are *very* long and precluded us from copying their recipes. We also checked a few smaller recipe websites we like and even they had terms of service that restricted automated collection of data.
 
